@@ -28,10 +28,7 @@ public class QuizController {
 
     @GetMapping("/question")
     public ResponseEntity<QuestionResponseDTO> getRandomQuestion(@RequestParam Long userId) {
-        log.info("Fetching random question for user ID: {}", userId);
-        QuestionResponseDTO randomQuestion = quizService.getRandomQuestion(userId);
-        log.info("Returning question: {}", randomQuestion);
-        return ResponseEntity.ok(randomQuestion);
+        return  new ResponseEntity<>(quizService.getRandomQuestion(userId),HttpStatus.OK);
     }
 
     @PostMapping("/answer")
