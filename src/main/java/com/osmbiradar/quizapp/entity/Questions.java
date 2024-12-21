@@ -1,10 +1,9 @@
 package com.osmbiradar.quizapp.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.Setter;
 
-@Getter
+
 @Setter
 @Entity
 @Table(name = "questions")
@@ -29,5 +28,33 @@ public class Questions {
     @Column(name = "correct_answer", nullable = false)
     private String correctAnswer;
 
+    //  getter setters because lombok is not working
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getQuestionText() {
+        return questionText;
+    }
+
+    public String getOptionA() {
+        return optionA;
+    }
+
+    public String getOptionB() {
+        return optionB;
+    }
+
+    public String getOptionC() {
+        return optionC;
+    }
+
+    public String getOptionD() {
+        return optionD;
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
 }

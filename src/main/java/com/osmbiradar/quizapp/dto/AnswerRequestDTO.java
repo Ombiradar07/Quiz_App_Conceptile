@@ -11,4 +11,13 @@ public class AnswerRequestDTO {
 
     @NotNull(message = "Correct Answer cannot be null")
     private String correctAnswer;
+
+    public Long getQuestionId() {
+        return questionId;
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
+
 }

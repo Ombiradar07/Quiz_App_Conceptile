@@ -6,13 +6,20 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(QuestionsNotFoundException.class)
-    public String handleQuestionsNotFoundException(QuestionsNotFoundException ex) {
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public String handleUserNotFoundException(ResourceNotFoundException ex) {
         return ex.getMessage();
     }
 
-    @ExceptionHandler(UserNotFoundException.class)
-    public String handleUserNotFoundException(UserNotFoundException ex) {
+    @ExceptionHandler(ValidationException.class)
+    public String handleValidationException(ValidationException ex) {
+        return ex.getMessage();
+    }
+
+    @ExceptionHandler(Exception.class)
+    public String handleException(Exception ex) {
+
         return ex.getMessage();
     }
 }
